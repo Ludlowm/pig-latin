@@ -12,15 +12,12 @@ var translateWord = function(word) {
     consonants.push(charArray[i]);
     i++;
   }
-  //at this point we have two arrays, one holding consonants and the other holding the entire string
-  //we need to chop off the consonants from the original string and then concat them to the original string
   if(consonants[consonants.length - 1] === 'q') {
     consonants.push(charArray.shift());
   }
   translatedArray = charArray.splice(0, consonants.length);
   return charArray.concat(consonants).join('') + 'ay';
 }
-
 
 var translateString = function(string) {
   var wordArray = string.split(" ");
